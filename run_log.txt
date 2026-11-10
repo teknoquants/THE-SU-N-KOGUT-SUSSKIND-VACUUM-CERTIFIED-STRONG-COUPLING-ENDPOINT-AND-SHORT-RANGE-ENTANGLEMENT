@@ -1,0 +1,108 @@
+
+=== Definitions 1-11 ===
+  [PASS] D1 orthonormal basis; Killing form B(X,Y) = 2N Tr(XY)  (N=2, N=3, N=4, N=5, N=6)
+  [PASS] D2/D3 SU(2): |W(C)| <= 1; W(C) and ReTr U_p gauge invariant  (2000 configurations)
+  [PASS] D2/D3 SU(3): |W(C)| <= 1; W(C) and ReTr U_p gauge invariant  (2000 configurations)
+  [PASS] D2 link reversal: U_e U_ebar = 1
+  [PASS] D5 h_e = -Laplacian/c_N has kernel {const} and gap exactly 1 (SU(2): (n^2-1)/3)  (first levels [0.0, 1.0, 2.667, 5.0])
+  [PASS] D7 iota injective; iota(dp) in 2x + Lambda_0; supports inside B_L
+  [PASS] D8 beta* < c1, 1 - c2 beta* >= 1/2, and g >= g0(N) <=> 6N/(g^4 c_N) <= beta*
+  [PASS] D9 zeta 1 is central with det 1; Stokes eta(dSigma) = <Sigma, delta eta> mod N
+  [PASS] D10 |P(C)| <= 8(r+s)  (1x1: 13 <= 16; 2x2: 28 <= 32; 3x3: 44 <= 48; 4x4: 60 <= 64)
+  -> Definitions: 9/9 checks passed
+
+=== Lemma 1 - normalization and constants ===
+  [PASS] (i) Ric = -B/4 = (N/2)<.,.> on su(N)  (N=2: err 2.7e-15; N=3: err 3.6e-15; N=4: err 1.4e-14 ...)
+  [PASS] (ii.a) fundamental Casimir = c_N, adjoint Casimir = 2N, both equal to the weight formula
+  [PASS] (ii.b) min_{lambda != 0} C(lambda) = (N^2-1)/N, attained at omega_1, omega_{N-1}; C(omega_k) formula  (N=2: min 3/2; N=3: min 8/3; N=4: min 15/4; N=5: min 24/5; N=6: min 35/6; N=7: min 48/7)
+  [PASS] (ii.c) SU(2): c_2 = 3/2 = 3/R^2 (R = sqrt 2); characters orthonormal, eigenvalues (n^2-1)/2  (Gram max dev 0.003)
+  [PASS] (iii.a) H-bar = 2H/(g^2 c_N) - 2N|P|/(g^4 c_N) (symbolic)
+  [PASS] (iii.b) sup|ReTr rho(U)| = N, attained at U = 1, so ||Psi_p|| <= 2N/(g^4 c_N)  (N=2: sample max 1.999; N=3: sample max 2.852; N=4: sample max 3.165)
+  [PASS] (iii.c) every link lies in at most 4 plaquettes (interior 4; boundary 2 or 3)  (counts [2, 3, 4])
+  -> Lemma 1: 7/7 checks passed
+
+=== Lemma 2 - ground-state transform ===
+  [PASS] ground state is strictly positive  (min Omega = 5.794e-02)
+  [PASS] (a) Omega^-1 A(Omega f) = -(g^2/2) D_L f pointwise  (max rel err 1.1e-11)
+  [PASS] (b) <Omega f, A Omega f> = (g^2/2) int |f'|^2 dpi  (max rel err 3.5e-12)
+  [PASS] (c) f -> Omega f is unitary L^2(pi) -> L^2(dx) and maps 1 to Omega
+  [PASS] (d) E_1 - E_0 = (g^2/2)/C_P  (g=0.6: gap 0.377024, (g^2/2)/C_P 0.377024; g=1.2: gap 0.921308, (g^2/2)/C_P 0.921308; g=2.5: gap 3.117587, (g^2/2)/C_P 3.117587)
+  [PASS] (e) discrete ground-state transform is exact on a weighted cycle  (max rel err 2.6e-15)
+  -> Lemma 2: 6/6 checks passed
+
+=== Proposition 3 - horizontal curvature criterion ===
+  [PASS] (a) weighted Bochner identity on the circle  (max rel err 8.6e-14)
+  [PASS] (b) -2h'' >= kappa  =>  gap >= kappa on R (sharp for Ornstein-Uhlenbeck)  (kappa0=2.0, a=0.0: bound 2.00, gap 2.0000; kappa0=2.0, a=0.4: bound 1.20, gap 2.6563; kappa0=1.0, a=0.2: bound 0.60, gap 1.2589)
+  [PASS] (c.1) full Bakry-Emery condition fails: angular -2 Hess h < 0 for r < R  (min angular curvature -999.0)
+  [PASS] (c.2) horizontal (radial) condition -2h'' = kappa holds, gap on invariant functions >= kappa  (invariant gap 1.0659)
+  [PASS] (c.3) non-invariant (angular m = 1) modes lie far below kappa  (lowest m=1 eigenvalue 0.0659)
+  [PASS] (d) lambda >= kappa and Lemma 2  =>  A_L >= (g^2 kappa/2) Q_L
+  -> Proposition 3: 6/6 checks passed
+
+=== Theorem 4 - uniform strong-coupling gap ===
+  [PASS] (i.1) iota is injective  (300 links)
+  [PASS] (i.2) iota(dp) is contained in 2x + Lambda_0
+  [PASS] (i.4) at most 3 plaquettes per lower corner (boundary included)
+  [PASS] (i.3) sup |ReTr rho(U)| = N (so ||psi_p|| = 2N/c_N)  (N=2: max sample 1.999, at 1: 2; N=3: max sample 2.662, at 1: 3; N=4: max sample 3.204, at 1: 4)
+  [PASS] (ii.1)-(ii.2) g >= g0 <=> 6N/(g^4 c_N) <= beta*;  beta* < c1;  1 - c2 beta* >= 1/2
+  [PASS] (ii.3) padding: link sites in {0..2L}^3; supports 2x + Lambda_0 in B_L = {0..2L+2}^3 (and need it)  (max support coordinate 10 = 2L+2)
+  [PASS] (ii.4) illustration: gap >= 1 - 4 beta uniformly in size  (beta=0.02: min gap 0.982; beta=0.05: min gap 0.963; beta=0.1: min gap 0.878)
+  [PASS] (ii.5) gap of a decoupled sum = min of gaps
+  [PASS] (ii.6) gap(H-bar) >= 1/2  =>  H_L - E_0 >= (g^2 c_N/4)(1 - P_0)
+  [PASS] (ii.7) positivity improving => unique positive ground state, invariant under the symmetry
+  [PASS] (iii) g0(N)^4 beta* = 6N^2/(N^2-1): 8 at N=2, 27/4 at N=3, decreasing to 6
+  -> Theorem 4: 11/11 checks passed
+
+=== Lemma 5 - center selection rule ===
+  [PASS] (a) rho(zeta U) = zeta^k rho(U): SU(2) chi_n, SU(3) fundamental/adjoint/Sym^2
+  [PASS] (b) T_eta fixes Psi_p iff (delta eta)(p) = 0 mod N; T_eta W(C) = zeta^{eta(C)} W(C)
+  [PASS] (c) C not in span{dp : p in X} mod N  <=>  a separating eta exists (and it works)  (53 bounding, 547 non-bounding cases)
+  [PASS] (d) exact Z_N model with resolvents: <F Omega0, W F' Omega0> = 0 unless C bounds in X  (N=2 dp_l, X={p_r}: 6.2e-19; N=2 dp_l, X={p_l}: 1.9e-01; N=2 rect, X={p_l}: 4.6e-19; N=2 rect, X={p_r}: 1.8e-18; N=2 rect, X={p_l,p_r}: 2.6e-02)
+  [PASS] (e) Haar MC: zero unless C bounds in X; filled rectangle exact (2^-rs, 6^-rs)  (SU(2) 1x1 filled: +0.5006±0.0011; SU(2) 1x1 minus one: +0.0004±0.0011; SU(2) 1x2 filled: +0.2490±0.0012; SU(2) 1x2 minus one: +0.0001±0.0011; SU(2) 2x2 filled: +0.0621±0.0011; SU(2) 2x2 minus one: +0.0033±0.0011; SU(3) 1x1 filled: +0.1659±0.0006; SU(3) 1x1 minus one: -0.0010±0.0007; SU(3) 1x2 filled: +0.0275±0.0004; SU(3) 1x2 minus one: +0.0008±0.0005; SU(3) 2x2 filled: +0.0007±0.0002; SU(3) 2x2 minus one: +0.0002±0.0003)
+  -> Lemma 5: 5/5 checks passed
+
+=== Proposition 6 / Corollary 7 - area count and expansion terms ===
+  [PASS] (a) d o d = 0 on 3-cells (orientation conventions consistent)  (48 cubes)
+  [PASS] (b) projection is a chain map: d pi_* = pi_* d
+  [PASS] (c) planar box: d injective on 2-chains mod p (no 2-cycles)  (16 squares)
+  [PASS] (d) dSigma = C  =>  stacked sums are 1 on each square and |supp Sigma| >= rs  (N=2, N=3)
+  [PASS] (e) exact minimum support of a Z_N 2-chain with boundary C equals rs (MILP)  (Z2 1x1:1 Z2 1x2:2 Z2 1x3:3 Z2 2x2:4 Z2 2x3:6 Z2 3x3:9 Z3 1x1:1 Z3 1x2:2 Z3 1x3:3 Z3 2x2:4 Z3 2x3:6 Z3 3x3:9)
+  [PASS] (f) exact Z_N vacuum: <W(C)> = O(lambda^{rs}) (leading order exactly rs)  (N=2 1x1: slope 1.000; N=2 2x1: slope 2.000; N=3 1x1: slope 1.001; N=3 2x1: slope 2.001; N=2 1x1: slope 1.000; N=2 2x1: slope 2.000; N=2 2x2: slope 4.000)
+  -> Proposition 6 / Corollary 7: 6/6 checks passed
+
+=== Proposition 8 - conditional area law ===
+  [PASS] (a) plaquette adjacency degree <= 12  (max degree 12)
+  [PASS] (b) connected sets of size n through a plaquette <= (12e)^n  (n=1: 1 <= 33, n=2: 12 <= 1064, n=3: 158 <= 34708, n=4: 2146 <= 1132147, n=5: 29531 <= 36929943)
+  [PASS] (c) at most 8(r+s) plaquettes contain a link of C
+  [PASS] (d) 8(r+s) sum q^n <= 16(r+s) q^{rs} <= M e^{-sigma rs};  x q^{x/2} <= 2/(e ln q^-1)  (max ratio middle/right 1.000)
+  [PASS] (e) truncated expansion with adversarial weights obeys the bound  (1x1, q=0.50: 2.34e-01 <= 2.40e+01; 1x1, q=0.20: 8.46e-02 <= 6.54e+00; 2x1, q=0.50: 5.24e-02 <= 1.70e+01; 2x1, q=0.20: 7.50e-03 <= 2.93e+00; 2x2, q=0.50: 1.83e-03 <= 8.49e+00; 2x2, q=0.20: 4.67e-05 <= 5.85e-01)
+  -> Proposition 8: 5/5 checks passed
+
+=== Proposition 9 - Schur-test criterion ===
+  [PASS] (a) Schur test ||H|| <= sup_e sum_f ||H_ef||  (max ratio 0.380)
+  [PASS] (b) polymer row sum r_L dominates ||Hess h||
+  [PASS] (c) per-polymer bound eps does not bound ||H|| (grows like m eps); row sum does  (m=1: ||H|| = 0.05; m=10: ||H|| = 0.50; m=100: ||H|| = 5.00)
+  [PASS] (d) Ric - 2 Hess h >= N/2 - 2b; kappa > 0 iff b < N/4
+  -> Proposition 9: 4/4 checks passed
+
+=== Remark 10 - static hypotheses ===
+  [PASS] (a) Omega determines V = E0 + (g^2/2) Omega''/Omega, hence the gap  (max |V_rec - V| = 3.1e-11; max |V_rec - V| = 3.4e-11; max |V_rec - V| = 1.4e-11)
+  [PASS] (b) equal static average <cos x>, different gaps  (<cos x> = 0.7148 vs 0.7148; gaps 0.967 vs 0.291)
+  -> Remark 10: 2/2 checks passed
+
+=== Summary ===
+  PASS  Definitions 1-11  (0.4 s)
+  PASS  Lemma 1 - normalization and constants  (3.0 s)
+  PASS  Lemma 2 - ground-state transform  (0.1 s)
+  PASS  Proposition 3 - horizontal curvature criterion  (16.3 s)
+  PASS  Theorem 4 - uniform strong-coupling gap  (0.4 s)
+  PASS  Lemma 5 - center selection rule  (12.9 s)
+  PASS  Proposition 6 / Corollary 7 - area count and expansion terms  (1.9 s)
+  PASS  Proposition 8 - conditional area law  (0.8 s)
+  PASS  Proposition 9 - Schur-test criterion  (5.9 s)
+  PASS  Remark 10 - static hypotheses  (0.0 s)
+
+Not validated (open inputs of the paper): the numerical values of Yarotsky's constants c1, c2; the
+expansion hypothesis E(g, K) of Proposition 8; the polymer row-sum bound of Proposition 9 for the actual
+vacuum; Remarks 11-12. SU(N) statements on the infinite lattice are checked on finite boxes, exact Z_N
+gauge models and one-dimensional models with the same operator structure.
